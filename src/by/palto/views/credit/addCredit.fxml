@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="650.0" prefWidth="700.0" styleClass="pane_credit" stylesheets="@../style.css" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="by.palto.controller.AddCredit">
+   <children>
+      <HBox layoutX="-4.0" layoutY="-6.0" prefHeight="100.0" prefWidth="700.0" stylesheets="@../style.css" />
+      <HBox layoutX="22.0" layoutY="102.0" prefHeight="398.0" prefWidth="648.0">
+         <children>
+            <VBox prefHeight="398.0" prefWidth="483.0">
+               <children>
+                  <HBox maxHeight="-Infinity" minHeight="-Infinity" prefHeight="50.0" prefWidth="403.0">
+                     <children>
+                        <Label text="Номер кредитного договора:" />
+                        <TextField fx:id="creditNumber" mouseTransparent="true">
+                           <HBox.margin>
+                              <Insets left="40.0" />
+                           </HBox.margin>
+                        </TextField>
+                     </children>
+                  </HBox>
+                  <HBox maxHeight="-Infinity" minHeight="-Infinity" prefHeight="50.0" prefWidth="450.0">
+                     <children>
+                        <ComboBox fx:id="cmbBoxCreditType" onAction="#changePercent" prefHeight="26.0" prefWidth="228.0" promptText="Кредитная программа" style="-fx-background-color: none;">
+                           <HBox.margin>
+                              <Insets />
+                           </HBox.margin>
+                        </ComboBox>
+                        <TextField fx:id="txtFieldPercent" mouseTransparent="true" prefHeight="26.0" prefWidth="38.0" promptText="\%">
+                           <HBox.margin>
+                              <Insets left="40.0" />
+                           </HBox.margin>
+                        </TextField>
+                        <ComboBox fx:id="cmbBoxCurrency" prefHeight="4.0" prefWidth="102.0" promptText="Валюта" style="-fx-background-color: none;">
+                           <HBox.margin>
+                              <Insets left="20.0" />
+                           </HBox.margin>
+                        </ComboBox>
+                     </children>
+                  </HBox>
+                  <HBox maxHeight="-Infinity" minHeight="-Infinity" prefHeight="50.0" prefWidth="450.0">
+                     <children>
+                        <HBox prefHeight="50.0" prefWidth="238.0" />
+                     </children>
+                  </HBox>
+                  <HBox maxHeight="-Infinity" minHeight="-Infinity" prefHeight="50.0" prefWidth="470.0">
+                     <children>
+                        <Label text="Сумма кредита:">
+                           <HBox.margin>
+                              <Insets />
+                           </HBox.margin>
+                        </Label>
+                        <TextField fx:id="txtFieldCreditAmount" prefHeight="0.0" prefWidth="149.0" promptText="Сумма">
+                           <HBox.margin>
+                              <Insets left="30.0" />
+                           </HBox.margin>
+                        </TextField>
+                     </children>
+                  </HBox>
+                  <HBox prefHeight="50.0" prefWidth="470.0">
+                     <children>
+                        <Label prefHeight="18.0" prefWidth="113.0" text="Дата начала:" />
+                        <DatePicker fx:id="dtPickerStart" onAction="#changeStartDate" prefHeight="27.0" prefWidth="160.0">
+                           <HBox.margin>
+                              <Insets left="40.0" />
+                           </HBox.margin>
+                        </DatePicker>
+                     </children>
+                  </HBox>
+                  <HBox prefHeight="48.0" prefWidth="470.0">
+                     <children>
+                        <Label prefHeight="18.0" prefWidth="114.0" text="Дата окончания:" />
+                        <DatePicker fx:id="dtPickerEnd" onAction="#changeEndDate" prefHeight="27.0" prefWidth="160.0">
+                           <HBox.margin>
+                              <Insets left="40.0" />
+                           </HBox.margin>
+                        </DatePicker>
+                     </children>
+                  </HBox>
+                  <Button fx:id="btnAdd" mnemonicParsing="false" onAction="#addNewCredit" prefHeight="40.0" prefWidth="115.0" text="Добавить" />
+               </children>
+            </VBox>
+            <VBox prefHeight="398.0" prefWidth="232.0">
+               <children>
+                  <HBox prefHeight="55.0" prefWidth="199.0">
+                     <children>
+                        <Label prefHeight="18.0" prefWidth="101.0" text="Клиент: " />
+                        <ComboBox fx:id="cmbBoxClients" prefHeight="25.0" prefWidth="137.0" style="-fx-background-color: None;">
+                           <HBox.margin>
+                              <Insets left="30.0" />
+                           </HBox.margin>
+                        </ComboBox>
+                     </children>
+                  </HBox>
+                  <HBox prefHeight="34.0" prefWidth="231.0">
+                     <children>
+                        <ComboBox fx:id="cmbBoxCharts" onAction="#createCharts" prefHeight="25.0" prefWidth="205.0" promptText="Балансовый счет" style="-fx-background-color: none;" />
+                     </children>
+                  </HBox>
+                  <HBox prefHeight="51.0" prefWidth="199.0" />
+                  <HBox prefHeight="42.0" prefWidth="231.0">
+                     <children>
+                        <Label text="Основной счет" />
+                     </children>
+                  </HBox>
+                  <HBox prefHeight="46.0" prefWidth="199.0">
+                     <children>
+                        <TextField fx:id="txtFieldMainChart" mouseTransparent="true" prefHeight="25.0" prefWidth="111.0" />
+                     </children>
+                  </HBox>
+                  <Label text="Счет для процентов" />
+                  <TextField fx:id="txtFieldPercentChart" mouseTransparent="true" prefHeight="0.0" prefWidth="111.0" />
+               </children>
+            </VBox>
+         </children>
+      </HBox>
+   </children>
+</AnchorPane>

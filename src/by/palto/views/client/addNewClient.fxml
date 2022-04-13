@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import by.palto.controller.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="650.0" prefWidth="750.0" styleClass="pane_adding" stylesheets="@../style.css" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="by.palto.controller.AddNewClient">
+  <children>
+    <TextField fx:id="addName" layoutX="54.0" layoutY="170.0" prefWidth="160.0" promptText="Имя" />
+    <TextField fx:id="addSurname" layoutX="54.0" layoutY="228.0" prefWidth="160.0" promptText="Фамилия" />
+    <TextField fx:id="addPatronymic" layoutX="54.0" layoutY="287.0" prefWidth="160.0" promptText="Отчество" style="-fx-border-style: none;" styleClass="text-field" stylesheets="@../style.css" />
+      <DatePicker fx:id="addBirthDate" layoutX="53.0" layoutY="341.0" prefHeight="27.0" prefWidth="172.0" promptText="Дата рождения" style="-fx-background-color: none;" />
+      <CheckBox fx:id="addPensioner" layoutX="37.0" layoutY="508.0" mnemonicParsing="false" prefHeight="18.0" prefWidth="150.0" text="Пенсионер" />
+      <TextField fx:id="addPassAuthority" layoutX="320.0" layoutY="301.0" prefWidth="160.0" promptText="Кем выдан" />
+      <DatePicker fx:id="addPassIssueDate" layoutX="318.0" layoutY="355.0" prefHeight="27.0" prefWidth="172.0" promptText="Дата выдачи паспорта" style="-fx-background-color: none;" />
+      <TextField fx:id="addBirthPlace" layoutX="585.0" layoutY="170.0" prefHeight="18.0" prefWidth="160.0" promptText="Место рождения" />
+
+      <!--  PASS SERIES-->
+      <MaskField fx:id="addPassSeries" layoutX="320.0" layoutY="170.0" mask="QQ" prefWidth="160.0" promptText="Серия паспорта" text="__" />
+<!--      <TextField fx:id="addPassSeries" layoutX="264.0" layoutY="66.0" prefWidth="160.0" promptText="Серия паспорта" />-->
+
+      <!--  PASS NUMBER-->
+      <MaskField fx:id="addPassNumber" layoutX="320.0" layoutY="246.0" mask="DDDDDDD" prefWidth="160.0" promptText="№ паспорта" />
+<!--      <TextField fx:id="addPassNumber" layoutX="264.0" layoutY="121.0" prefWidth="160.0" promptText="№ паспорта" />-->
+
+<!--      PASS PERSONAL NUMBER-->
+      <MaskField fx:id="addPassPersonalNumber" layoutX="320.0" layoutY="406.0" mask="DDDDDDDADDDPBD" prefWidth="160.0" promptText="Идент. номер" />
+<!--      <TextField fx:id="addPassPersonalNumber" layoutX="264.0" layoutY="301.0" prefWidth="160.0" promptText="Идент. номер" />-->
+
+<!--      HOME PHONE-->
+      <MaskField fx:id="addHomePhone" layoutX="585.0" layoutY="327.0" mask="+8(DDD)DDD-DD-DD" prefWidth="160.0" promptText="Домашний телефон" />
+<!--      <TextField fx:id="addHomePhone" layoutX="568.0" layoutY="246.0" prefWidth="160.0" promptText="Домашний телефон" />-->
+
+<!--      MOBILE PHONE-->
+      <MaskField fx:id="addMobilePhone" layoutX="585.0" layoutY="362.0" mask="+375(DD)DDD-DD-DD" prefWidth="160.0" promptText="Мобильный телефон" />
+      <!--      <TextField fx:id="addMobilePhone" layoutX="568.0" layoutY="301.0" prefWidth="160.0" promptText="Мобильный телефон" />-->
+
+      <ComboBox fx:id="addCityOfResidence" layoutX="579.0" layoutY="233.0" prefHeight="26.0" prefWidth="172.0" promptText="Город проживания" style="-fx-background-color: none;" />
+      <TextField fx:id="addResidenceAddress" layoutX="585.0" layoutY="272.0" prefWidth="160.0" promptText="Адрес проживвания" />
+
+      <RadioButton fx:id="addMale" layoutX="37.0" layoutY="478.0" mnemonicParsing="false" selected="true" text="Мужской">
+         <toggleGroup>
+            <ToggleGroup fx:id="sex" />
+         </toggleGroup></RadioButton>
+      <RadioButton fx:id="addFemale" layoutX="142.0" layoutY="478.0" mnemonicParsing="false" text="Женский" toggleGroup="$sex" />
+      <TextField fx:id="addEmail" layoutX="585.0" layoutY="398.0" prefWidth="160.0" promptText="Email" />
+      <TextField fx:id="addRegistrationAddress" layoutX="321.0" layoutY="455.0" prefWidth="160.0" promptText="Адрес прописки" />
+      <ComboBox fx:id="addMaritalStatus" layoutX="52.0" layoutY="399.0" prefHeight="25.0" prefWidth="174.0" promptText="Семейное положение" style="-fx-background-color: none;" />
+      <ComboBox fx:id="addCitizenship" layoutX="320.0" layoutY="505.0" prefHeight="26.0" prefWidth="160.0" promptText="Гражданство" style="-fx-background-color: none;" />
+      <ComboBox fx:id="addDisability" layoutX="578.0" layoutY="451.0" prefHeight="25.0" prefWidth="174.0" promptText="Инвалидность" style="-fx-background-color: none;" />
+      <HBox layoutX="178.0" layoutY="536.0" prefHeight="111.0" prefWidth="565.0">
+         <children>
+            <Button fx:id="addingButton" mnemonicParsing="false" onAction="#addClientToTheDatabase" prefHeight="15.0" prefWidth="131.0" text="Добавить">
+               <HBox.margin>
+                  <Insets left="60.0" top="25.0" />
+               </HBox.margin>
+               <font>
+                  <Font size="18.0" />
+               </font></Button>
+            <Button fx:id="backButton" mnemonicParsing="false" onAction="#returnBack" prefHeight="43.0" prefWidth="137.0" text="Назад">
+               <HBox.margin>
+                  <Insets left="60.0" top="25.0" />
+               </HBox.margin>
+               <font>
+                  <Font size="10.0" />
+               </font></Button>
+         </children>
+      </HBox>
+
+      <TextField id="addTab_name" fx:id="addMonthIncome" layoutX="585.0" layoutY="487.0" prefWidth="160.0" promptText="Ежемесячный доход" />
+      <Label fx:id="addNameErrorLabel" layoutX="48.0" layoutY="202.0" text="Проверьте введенные данные!" textFill="RED" />
+      <Label fx:id="addSurnameErrorLabel" layoutX="48.0" layoutY="264.0" text="Проверьте введенные данные!" textFill="RED" />
+      <Label fx:id="addPatronymicErrorLabel" layoutX="47.0" layoutY="319.0" text="Проверьте введенные данные!" textFill="RED" />
+      <Label fx:id="addBirthDateErrorLabel" layoutX="48.0" layoutY="376.0" text="Проверьте введенные данные!" textFill="RED" />
+      <Label fx:id="addPassSeriesErrorLabel" layoutX="320.0" layoutY="202.0" prefHeight="18.0" prefWidth="185.0" text="Проверьте введенные данные!" textFill="RED" />
+      <Label fx:id="addPassNumberErrorLabel" layoutX="318.0" layoutY="277.0" text="Проверьте введенные данные!" textFill="RED" />
+      <Label fx:id="addPassAuthorityErrorLabel" layoutX="318.0" layoutY="337.0" text="Проверьте введенные данные!" textFill="RED" />
+      <Label fx:id="addPassIssueDateErrorLabel" layoutX="318.0" layoutY="385.0" text="Проверьте введенные данные!" textFill="RED" />
+      <Label fx:id="addPassPersonalNumberErrorLabel" layoutX="315.0" layoutY="437.0" text="Проверьте введенные данные!" textFill="RED" />
+      <Label fx:id="addRegistrationAddressErrorLabel" layoutX="318.0" layoutY="483.0" text="Проверьте введенные данные!" textFill="RED" />
+      <Label fx:id="addBirthPlaceErrorLabel" layoutX="579.0" layoutY="202.0" text="Проверьте введенные данные!" textFill="RED" />
+      <Label fx:id="addResidenceAddressErrorLabel1" layoutX="579.0" layoutY="301.0" text="Проверьте введенные данные!" textFill="RED" />
+      <Label fx:id="addEmailErrorLabel" layoutX="579.0" layoutY="428.0" text="Проверьте введенные данные!" textFill="RED" />
+      <Label fx:id="addMonthIncomeErrorLabel" layoutX="579.0" layoutY="518.0" text="Проверьте введенные данные!" textFill="RED" />
+      <Label layoutX="321.0" layoutY="152.0" prefHeight="18.0" prefWidth="99.0" text="Серия:" />
+      <Label layoutX="319.0" layoutY="224.0" prefHeight="18.0" prefWidth="115.0" text="Номер:" />
+      <Label layoutX="51.0" layoutY="446.0" text="Выберите пол" />
+
+  </children>
+</AnchorPane>
